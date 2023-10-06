@@ -3,10 +3,11 @@
 
 ### <span style="color:#3c66b5">Theorem</span>
 
-==Lower bound...????== $R(k) \geq 2^{k/2}$
+$$
+\text{For every } k \in \mathbb{N}, \text{we have } R(k)\ge 2^{k/2}
+$$
 
 
-For every $k \in \mathbb{N}$, we have $R(k)\ge 2^{k}$
 
 
 Before we start the proof, let's look at 3 ingredients we need: 
@@ -27,10 +28,12 @@ Let $n \in \mathbb{N}$ to be chosen later.
 
 Experiment: colro each edge of $K_n$ uniformly at random with red or blue. 
 
-Set of all poss==ible outcome is:== 
+Set of all possible outcome is:
 $$
-\Omega = \{\text{red, blue}\}^{{n} \choose {k}}
+\Omega = \{\text{red, blue}\}^{{n} \choose {2}}
 $$
+
+
 
 #### <span style="color:#599eff">Union Bound</span>
 
@@ -87,21 +90,35 @@ We simply use that $1+x \leq e^x$ for all $x \in \mathbb{R}$.
 
 > To see why this "fact" holds, consider the tangent line of the function $f(x) = e^x$ at $x=0$.
 
-Trial: Use the binomial theorem
+Use the binomial theorem
 $$
-\left( 1 + \frac{k}{n} \right)^k = \sum_{i=0}^{n}\left(\frac{k}{n}\right)^i{{n} \choose {i}} \geq ...
+\begin{align*}
+\left( 1 + \frac{k}{n} \right)^k &= \sum_{i=0}^{n}\left(\frac{k}{n}\right)^i{{n} \choose {i}} &&\text{by Binomial Theorem}\\
+&\geq \left( \frac{k}{n} \right)^k \cdot \binom{n}{k} && \text{when $i$ starts from $k$}\\
+\end{align*}
+$$
+
+Since we have the fact: $1+x \leq e^x$, when $x = \frac{k}{n}$, we have:
+$$
+\begin{align*}
+
+\left( e^{k/n} \right)^n = e^k \geq \left( 1 + \frac{k}{n} \right)^k
+&\geq \left( \frac{k}{n} \right)^k \cdot \binom{n}{k} \\
+\iff 
+\left( \frac{en}{k} \right)^k &\geq \binom{n}{k}
+
+\end{align*}
 $$
 
 
 
 
-
-
+### NOW, lets start our proof of the "lower bound" theorem in the beginning
 
 
 <span style="color:#eb861c">Proof</span> of $R(k)\geq 2^{k/2}$
 
-==...==
+
 
 
 
