@@ -6,4 +6,6 @@ I edited them using Typora. If you have it, rendering these Markdown files shoul
 
 Right now, I included some images with my own github repository. But I will try to put them  into this repository later. 
 
+I also post my notes on my [personal blog](https://ohuro.me/tags/combinatorics/). These should be easy to read from any device. 
+
 10.06.2023
