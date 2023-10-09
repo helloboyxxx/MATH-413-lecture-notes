@@ -43,7 +43,6 @@ $$
 \end{align*}
 $$
 
-
 **Claim 1:** Let $i \in \set{1, ..., (s-1)(r-1)}$
 
 Then, either $x_{i+1} > x_i$ or $y_{i+1} > y_i$
@@ -81,7 +80,7 @@ There are two options:
 
 Now that the two claims are done, we can construct this box that contains $(r-1)(s-1)$ points. Then the extra one point in the 2D space gives us the fact that along one dimension, we have $s$ or $r$ points.
 
-<img src='https://raw.githubusercontent.com/helloboyxxx/images-for-notes/master/uPic/1PxvYf.png' alt='1PxvYf' style="zoom: 50%;" />
+<img src='/Users/sam/Desktop/1PxvYf.png' alt='1PxvYf' style="zoom: 50%;" />
 
 $\blacksquare$
 
