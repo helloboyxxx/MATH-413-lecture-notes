@@ -163,6 +163,6 @@ $$
 $$
 Further simplification: 
 $$
-\binom{n}{\lfloor n/2\rfloor} \sim \Theta(\frac{2^n}{\sqrt n})
+\binom{n}{\lfloor n/2\rfloor} \sim \Theta\left(\frac{2^n}{\sqrt n}\right)
 $$
 Cancelling the $2^n$ gives us the statement of the theorem.
