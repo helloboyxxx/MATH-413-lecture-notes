@@ -22,17 +22,6 @@ Let $\Omega$ be the set of all possible outcomes of an experiment. Suppose that 
 $$
 \text{If } \operatorname{Prob}(A) < 1 \text{, then } \operatorname{Prob}(A^c) > 0
 $$
-**Our setting:**
-
-Let $n \in \mathbb{N}$ to be chosen later. 
-
-Experiment: colro each edge of $K_n$ uniformly at random with red or blue. 
-
-Set of all possible outcome is:
-$$
-\Omega = \{\text{red, blue}\}^{{n} \choose {2}}
-$$
-
 
 
 #### <span style="color:#599eff">Union Bound</span>
@@ -67,18 +56,7 @@ $$
 $$
 
 
-**Our setting:**
-
-Label all the copies of $K_k$inside $K_n$. There are ${{n} \choose {k}}$ of them. 
-
-Our events will be of the following form: 
-$$
-A_i = \{i^{th} \text{ clique is monochromatic}\}
-$$
-
-
-
-#### <span style="color:#599eff">A binomial estimate</span>
+#### <span style="color:#599eff">The binomial estimate</span>
 
 $$
 \text{If } 1 \leq k \leq n, \text{ then } {{n} \choose {k}} \leq \left(\frac{ne}{k}\right)^k
@@ -115,8 +93,78 @@ $$
 
 ### NOW, lets start our proof of the "lower bound" theorem in the beginning
 
-
 <span style="color:#eb861c">Proof</span> of $R(k)\geq 2^{k/2}$
+
+#### Intuition
+
+We want to show that whenever $n$ is smaller than some number, it is **possible** to have some coloring of $K_n$ such that $\nexists $monochromatic $K_k$.
+
+#### Approaching the proof
+
+Let $n \in \mathbb{N}$ to be chosen later. 
+
+Experiment: color each edge of $K_n$ uniformly at random with red or blue. 
+
+Set of all possible outcome is:
+$$
+\Omega = \{\text{red, blue}\}^{{n} \choose {2}}
+$$
+
+Then, choose a $k$. Label all the copies of $K_k$ inside $K_n$. There are ${{n} \choose {k}}$ of them. 
+
+Our events will be of the following form: 
+$$
+A_i = \{i^{th} \text{ clique is monochromatic}\}
+$$
+
+
+Consider the probability of each of these $A_i$. They should have the same probability. So $\forall i \in \{1, \ldots, \binom{n}{k} \}, A_i = A_1$. For  each edge in the $K_k$ graph, it can be colored either red or blue. By applying the multiplication principle, this is:
+$$
+\mathbb{P}(A_i) = 2 \cdot \left( \frac{1}{2} \right)^{|E(K_k)|} = 2 \cdot \left( \frac{1}{2} \right)^{\binom{k}{2}}
+$$
+
+We want to know what is the probability of the event $A$, that for all coloring of $K_n$, there exists a monochromatic $K_k$:
+
+$$
+\begin{align*}
+\mathbb{P}\left(A\right) &= \mathbb{P}\left(\bigcup_{i=1}^{\binom{n}{k}}A_i\right) = \mathbb{P}\left(\bigcup_{i=1}^{\binom{n}{k}}A_1\right)\\
+&= \binom{n}{k}\mathbb{P}\left( A_1 \right) = \binom{n}{k} \cdot 2 \cdot \left( \frac{1}{2} \right)^{\binom{k}{2}}\\
+&\leq \left( \frac{ne}{k} \right)^k \cdot 2 \cdot \left( \frac{1}{2} \right)^{\binom{k}{2}} && \text{binomial estimate}\\
+&= \left( \frac{ne}{k} \right)^k \cdot 2 \cdot \left( \frac{1}{2} \right)^{k(k-1)/2}\\
+&= \left( \frac{ne\cdot 2^{1/k}}{k\cdot 2^{(k-1)/2}} \right)^k
+\end{align*}
+$$
+
+HERE COMES THE MAGIC!!!
+
+Pick $n = 2^{k/2}$ for this expression, then cancel some terms.
+$$
+\begin{align*}
+P(A) &\leq \left( \frac{2^{k/2} \cdot e\cdot 2^{1/k}}{k\cdot 2^{(k-1)/2}} \right)^k\\
+&= \left( \frac{2^{1/2} \cdot e \cdot 2^{1/k}}{k} \right)^k
+\end{align*}
+$$
+Then, we argue that this is smaller than 1 for all $k \geq 5$. To see why, just check the correctness of the inequality:
+$$
+\sqrt{2} \cdot e \cdot 2^{1/k} < k
+$$
+When $k = 5$, left side is about 4.416. When $k$ gets larger, it left side gets closer to $\sqrt{2} e$, which must be smaller than $k$. For $k < 5$ cases, we can just check them by hand. 
+
+When we have the result that $P(A) < 1$, by the probabilistic method, we know the probability of the existance of a coloring such that no monochromatic $K_k$ appears in $K_n$.
+
+
+
+> Personally, I have one confusion: when $n = 2^{k/2}$, we have the result the above result. But we are trying to prove $R(k)\geq 2^{k/2}$... so...
+>
+> 
+
+
+
+
+
+
+
+
 
 
 

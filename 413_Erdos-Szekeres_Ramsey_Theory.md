@@ -147,7 +147,7 @@ Let $t \in \set{1, 2, 3,...}$. The Ramsey number $R(t)$ is the smallest value of
 
 ### <span style="color:#3c66b5">Ramsey's theorem</span>
 
-For every $k \in \mathbb{N}$, we have $R(k) < 4^k$.
+For every $k \in \mathbb{N}$, we have $R(k) \leq 4^k$.
 
 <span style="color:#eb861c">Proof</span>: $k$ is fixed
 
@@ -163,7 +163,7 @@ Note that either $|N_R(v_1)| \geq \frac{4^k}{2}$ or $|N_B(v_1)| \geq \frac{4^k}{
 
 **Step 1:** Let us color $v_1$ blue if $|N_B(v_1)| \geq \frac{4^k}{2}$ and red otherwise. 
 
-Then, restrict our graph to $v_1 \cup N_{c(v_1)}(v_1)$.
+Then, restrict our graph to $v_1 \cup N_{c(v_1)}(v_1)$. Where $c_{(v_1)}$ is the color of $v_1$
 
 **Step 2:** Take $v_2 \in N_{c(v_1)}(v_1)$. Color $v_2$ blue if $|N_B(v_2) \cap N_{c(v_1)}(v_1)| \geq \frac{4^k}{4}$, otherwise, color it red. 
 

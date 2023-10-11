@@ -272,4 +272,3 @@ Otherwise, in case 2: Choose one vertex, and draw lines to other verticies. If t
 
 # Wish you a good dream without Ramsey😴
 
-
