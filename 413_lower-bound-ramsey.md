@@ -154,7 +154,7 @@ When we have the result that $P(A) < 1$, by the probabilistic method, we know th
 
 
 
-> Personally, I have one confusion: when $n = 2^{k/2}$, we have the result the above result. But we are trying to prove $R(k)\geq 2^{k/2}$... so...
+> Personally, I have one confusion: when $n = 2^{k/2}$, we have the above result. But we are trying to prove $R(k)\geq 2^{k/2}$... so...
 >
 > 
 
