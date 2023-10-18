@@ -1,13 +1,17 @@
 # Multinomial Coefficient
 
-<span style="color:#28a745">Definition</span>
+<span style="color:#28a745">Definition</span> A multinomial coefficient is:
 
-==A multinomial coefficient is==
 $$
-\binom{}{}
+\binom{n}{n_1 n_2 \cdots n_t}
+
+=\frac{n !}{n_{1} ! n_{2} ! \cdots n_{t} !}
 $$
 
-
+Here, $n_1, n_2, \ldots, n_t$ are nonnegative integers with
+$$
+n_1+n_2+\cdots+n_t=n
+$$
 
 
 ### <span style="color:#3c66b5">Pascal's theorem for multinomial coefficients</span>
