@@ -53,9 +53,11 @@ $$
 - \sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j} + \ldots
 + \sum_{1, 2, 3\ldots n \in \binom{[n]}{n}} 1_{v \in A_1 \cap \cdots \cap A_n}
 $$
-Define $k = \# \{i : v \in A_i\} \geq 1$. Suppose $v \in A_1, \ldots, A_k$ and $v \not \in A_{k+1}, \ldots A_n$.	$\blacksquare$
+Define $k = \# \{i : v \in A_i\} \geq 1$. Suppose $v \in A_1, \ldots, A_k$ and $v \not \in A_{k+1}, \ldots A_n$.
 
-==Alternating sum==
+Pick an example $\sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j}$, whenever $i > k$ or $j > k$, the indicator function $1_{v\in A_i \cap A_j}$ gives us 0. Then the number of 
+
+
 
 
 
@@ -220,4 +222,73 @@ $$
 
 
 
+
+---
+
+<span style="color:#04c2b2">Another forbidden position problem</span>
+
+==...==
+
+
+
+### <span style="color:#3c66b5">Theorem</span>
+
+Let $Q_n$ denote the number of permutations of $\set{1, 2, \ldots, n}$ in which none of the patterns $12, 23, \ldots, (n-1)n$ occurs. Then, 
+$$
+Q_n = n! + \sum_{j=1}^{n-1}(-1)^j \binom{n-1}{j}(n-j)!
+$$
+<span style="color:#eb861c">Proof</span>
+
+We want to find the bad sets: For $i \in \set{1, \ldots, n-1}$, define $A_i = $ permutations of $[n]$ so that the pattern $i,i+1$ shows up. Our goal is to use the inclusion-exclusion principle to calculate $n! - |\bigcup_{i=1}^{n-1}A_i|$.
+
+>Question: What is $|A_i|$? Ans: $(n-1)!$ if we group $i, i+1$ together, then there are $n-1$ objects.
+
+> Questions: What is $|A_i \cap A_j|$? Ans: there are two situations: (1) If they intersect, such as $123$, then we have one object of size three. This is $(n-2)!$. If they don't, we should have two objects of size two, so also $(n-2)!$
+
+Then, let $\set{i_1, \ldots, i_k} \in \binom{[n-1]}{k}$, then we want to show: $|A_{i_1} \cap \cdots \cap A_{i_k}| = (n-k)!$
+
+Suppose that $\set{i_a, i_a+1} \cap \set{i_b, i_b+1} = \varnothing, \forall a \neq b$. Then there are $n-k$ objects. 
+
+Suppose some block has more than two objects, we lose the elements that intersets, but the same amount of elements are set free to be outside the block. (Consider the case (1234) and (5678) becomes (123456)).
+
+Now, the expression: 
+$$
+\sum_{\set{i_1, \ldots, i_k} \in \binom{[n-1]}{k}}
+|A_{i_1} \cap \cdots \cap A_{i_k}| = (n-k)! \cdot \binom{n-1}{k}
+$$
+Then apply the inclusion-exclution:
+$$
+\left|\bigcup_{i=1}^{n-1}A_i\right| = \sum_{j=1}^{n-1}(-1)^j \binom{n-1}{j}(n-j)!
+$$
+
+---
+
+Another application: 
+
+### <span style="color:#3c66b5">The Euler Function</span>
+
+For $n \in \mathbb{N}$, define $\varphi(n)$ to be the number of positive integers not exceeding $n$ that are relatively prime to $n$. We have: 
+$$
+\varphi(n) = n\prod_{p \mid n}\left(1 - \frac{1}{p}\right)
+$$
+Note that the $p$ are the primes that divides $n$. 
+
+Example: $\varphi(6) = |\set{1, 5}| = 2$
+
+<span style="color:#eb861c">Proof</span>
+
+Let $n = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_k^{\alpha_k}$ where $p_i$ is prime and $\alpha_i \geq 1$
+
+$A_i = \set{m \in [n] : p_i \mid m}$
+
+$\varphi(n) = n - \left|\bigcup_{i=1}^{k} A_i \right|$
+
+==...==
+
+
+
+By inclusion-exclusion: 
+$$
+\varphi(n) = n -
+$$
 

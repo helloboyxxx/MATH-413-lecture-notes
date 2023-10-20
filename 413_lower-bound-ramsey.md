@@ -118,7 +118,7 @@ A_i = \{i^{th} \text{ clique is monochromatic}\}
 $$
 
 
-Consider the probability of each of these $A_i$. They should have the same probability. So $\forall i \in \{1, \ldots, \binom{n}{k} \}, A_i = A_1$. For  each edge in the $K_k$ graph, it can be colored either red or blue. By applying the multiplication principle, this is:
+Consider the probability of each of these $A_i$. They should have the same probability. So $\forall i \in \{1, \ldots, \binom{n}{k} \}, A_i = A_1$. For each edge in the $K_k$ graph, it can be colored either red or blue. By applying the multiplication principle, this is:
 $$
 \mathbb{P}(A_i) = 2 \cdot \left( \frac{1}{2} \right)^{|E(K_k)|} = 2 \cdot \left( \frac{1}{2} \right)^{\binom{k}{2}}
 $$
@@ -150,7 +150,7 @@ $$
 $$
 When $k = 5$, left side is about 4.416. When $k$ gets larger, it left side gets closer to $\sqrt{2} e$, which must be smaller than $k$. For $k < 5$ cases, we can just check them by hand. 
 
-When we have the result that $P(A) < 1$, by the probabilistic method, we know the probability of the existance of a coloring such that no monochromatic $K_k$ appears in $K_n$.
+When we have the result that $P(A) < 1$, by the probabilistic method, we know the probability of the existence of a coloring such that no monochromatic $K_k$ appears in $K_n$.
 
 
 
