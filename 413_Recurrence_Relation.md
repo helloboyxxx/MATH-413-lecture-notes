@@ -104,17 +104,19 @@ $$
 
 ### <span style="color:#3c66b5">Fact</span>
 
-==...==
+Let $k$ be a constant and let $(h_n)_{n=0}^{\infty}$ be a sequence which satisfies the following linear recurrence relation: $$h_n = c_1h_{n-1}+c_2h_{n-2}+\ldots+c_kh_{n-k}.$$
 
-
+Let $(h'_n)_n$ be a sequence satisfying the same recurrence relation above and suppose that $h_i = h_i'$ for all $i \in \{1,\ldots,k\}$. Then,
+$$h_i = h'_i \text{ for all } i \ge 1.$$
 
 
 
 <span style="color:#28a745">Definition</span> Fibonacci Sequence
 
-==...==
-
-The sequence of numbers $f_0, f_1, f_2, f_3\ldots$.
+The sequence of numbers $f_0,f_1,f_2,f_3,\ldots$ satisfying the recurrence relation and initial conditions 
+$$
+\begin{cases}f_n = f_{n-1} + f_{n-2} \phantom{iii} (n \ge 2) \\ f_0 = 0, f_1 = 1 \end{cases}
+$$
 
 ### <span style="color:#3c66b5">Theorem</span>
 
@@ -137,7 +139,7 @@ $$
 \begin{align*}
 q^n = q^{n-1} \cdot q^{n-2}\\
 q^2 = q+1\\
-q^q - q - 1 = 0\\
+q^2 - q - 1 = 0\\
 q = \frac{1\pm \sqrt 5}{2}
 \end{align*}
 $$
@@ -148,7 +150,14 @@ $$
 (b_i)_{i=0}^{\infty} = \left( \frac{1 - \sqrt 5}{2} \right)^i\\
 \end{align*}
 $$
-Then $(a_i)_i$ and $(b_i)_i$ satisfies: $a_n = a_{n-1} + a_{n-2}, b_n = b_{n-1} + b_{n-2}$.
+Then $(a_i)_i$ and $(b_i)_i$ satisfies:
+$$
+\begin{cases}
+a_n = a_{n-1} + a_{n-2}\\
+b_n = b_{n-1} + b_{n-2}
+\end{cases}
+$$
+
 
 <span style="color:#599eff">Lemma</span> Let $c_1, c_2 \in \mathbb{R}$. $(a_i)_i, (b_i)_i$ as before. 
 
@@ -167,21 +176,43 @@ $\blacksquare$
 Now the goal is to find some $c_1, c_2$ such that $d_0 = 0, d_1 = 1$. (JUST GUESSSSSSS!!!!)
 $$
 \begin{align*}
-d_0 &= c_1 a_0 + c_2 b_0\\
-d_1 &= c_1 a_1 + c_2 b_1\\
-\Rightarrow\\
+&\begin{cases}
+d_0 = c_1 a_0 + c_2 b_0\\
+d_1 = c_1 a_1 + c_2 b_1\\
+\end{cases}
+&\Rightarrow
+&\begin{cases}
 d_0 &= c_1 \cdot 1 + c_2 \cdot 1 = 0\\
 d_1 &= c_1 \cdot \left( \frac{1 + \sqrt 5}{2} \right)^1 
 + c_2 \cdot \left( \frac{1 + \sqrt 5}{2} \right)^1 = 1
+\end{cases}
 \end{align*}
 $$
 
+Solving this linear system gives us the result: 
+$$
+\begin{cases}
+c_1 = \frac{1}{\sqrt 5}\\
+c_2 = -\frac{1}{\sqrt 5}
+\end{cases}
+$$
 
 
+---
 
+### Tower of Hanoi
 
+> OK, we all know what this is... Let's see what are the differences in the context of combinatorics. 
 
+### <span style="color:#3c66b5">Theorem</span>
 
+The minimal number of moves requried to solve a Tower of Hanoi puzzle is $2^n - 1$, where $n$ is the number of disks.
+
+<span style="color:#eb861c">Proof</span>
+
+By induction.
+
+<img src="https://raw.githubusercontent.com/helloboyxxx/images-for-notes/master/uPic/image-20231023112446979.png" alt="image-20231023112446979" style="zoom:50%;" />
 
 
 

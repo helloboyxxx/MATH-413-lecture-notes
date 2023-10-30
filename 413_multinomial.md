@@ -32,8 +32,6 @@ $$
 
 
 
-
-
 <span style="color:#eb861c">Proof</span>
 
 Combinatorial argument: 
@@ -54,7 +52,13 @@ Which is equal to the right side. Left side is trivial. Done.
 
 ### <span style="color:#3c66b5">The multinomial theorem</span>
 
-==Let $n$ be ...==
+Let $n$ be a positive integer. For all $x_1,\ldots,x_t$, we have
+
+$$
+(x_1+\cdots+x_t)^n = \sum \binom{n}{n_1,\, n_2, \ldots, \, n_k} x_1^{n_1}x_2^{n_2}\cdots x_t^{n_t}
+$$
+
+where the summation extends over all nonnegative integral solutions $n_1,\ldots,n_t$ of $n_1 + \cdots + n_t = n$.
 
 <span style="color:#eb861c">Proof</span>
 
