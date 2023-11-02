@@ -134,8 +134,6 @@ The goal is to show that two of them are equal. Note that there are 132 games at
 
 By the pigeonhole pirinciple, two of them are equal. And since these two equal number may not come from the same sequence, $\exists a_i = a_j + 21$, which gives us the consecutive days $i$ to $j$. 
 
-
-
 ### <span style="color:#3c66b5">Chinese Remainder Theorem</span>
 
 Let $m$ and $n$ be relatively prime positive integers, and let $a$ and $b$ be integers where $0 \leq a \leq m - 1$ and $0 \leq b \leq n - 1$.

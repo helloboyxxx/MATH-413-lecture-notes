@@ -18,7 +18,9 @@ $|A \cup B| = |A| + |B| - |A \cap B| = 300 + 200 - 100$
 
 Let $A_1,\ldots, A_n$ be a sequence of finite sets. Then,
 
-$$\left | \bigcup_{i=1}^n A_i\right | = \sum_{i \in [n]} |A_i|-\sum_{ij \in \binom{[n]}{2}}|A_i \cap A_j|+\ldots+(-1)^{n+1}\sum_{i \in \binom{[n]}{n}} |A_i|,$$
+$$
+\left | \bigcup_{i=1}^n A_i\right | = \sum_{i \in [n]} |A_i|-\sum_{ij \in \binom{[n]}{2}}|A_i \cap A_j|+\ldots+(-1)^{n+1}\sum_{i \in \binom{[n]}{n}} |A_i|
+$$
 
 Where $[n]= \{1,\ldots,n\}$ and $\binom{[n]}{i}=\{A\subseteq [n]: |A|=i\}$. 
 
@@ -93,13 +95,9 @@ $$
 
 
 
-
-
-
-
 <span style="color:#04c2b2">Exercise</span>
 
-How many permutation of MATH IS ==FUN...==
+How many permutations of the letters M, A, T, H, I, S, F, U, N are there such that none of the words MATH, IS, and FUN occur as consecutive letters?
 
 **Solution:**
 
@@ -189,7 +187,7 @@ $$
 
 $$
 \begin{aligned}
-e^x=\sum_{i=0}^{\infty} \frac{x^i}{i !} & \\
+e^x=\sum_{i=0}^{\infty} \frac{x^i}{i !} && \text{by Taylor's Expansion} \\
 D_n \sim \frac{n !}{e}\\
 \lim _{n \rightarrow \infty} \frac{D_n}{n !}=\frac{1}{e}
 \end{aligned}
@@ -199,7 +197,7 @@ When $n \to \infty$, the probability of a dearangement is $\frac{1}{e}$.
 
 <span style="color:#eb861c">Proof</span>
 
-$\mathcal{P} = $ permutations of $[n]$
+$\mathcal{P} = $ permutations of $[n] = n!$
 
 Bad sets: for $i \in [n]$ define: $A_i = $ number of permutations where $i$ is in the $i^{th}$ position. 
 
@@ -227,7 +225,8 @@ $$
 
 <span style="color:#04c2b2">Another forbidden position problem</span>
 
-==...==
+Suppose a class of eight boys takes a walk every day. The students walk in a line of eight so that every boy except the first is preceded by another. In order that a child not see the same person in front of him, on the second day the students decide to switch positions so that no boy is preceded by the same boy who preceded him on the first day. In how many ways can they switch positions?
+
 
 
 
