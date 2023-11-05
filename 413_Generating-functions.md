@@ -503,18 +503,29 @@ $r(x)$ is the characteristic polynomial of the homogeneous linear recurrence.
 
 ### <span style="color:#3c66b5">Theorem</span>
 
-==...== lecture 30
+Let $(h_i)_{i\ge0}$ be a sequence of numbers defined by the **homogeneous** recurrence relation
 
-Then the generating function of $(h_i)_{i \geq 0}$ is given by $g(x) = p(x) / q(x)$, where $q(x) = x^kr(1/x)$ and
 $$
-p(x) = ...
+h_n + a_1h_{n-1}+\cdots+a_kh_{n-k}=0, \, (n \ge k)
 $$
+
+of order $k$ and with initial values for $h_0, h_1,\ldots,h_{k-1}$.
+
+Let $r(x) = x^k +a_1 x^{k-1}+a_2x^{k-2}+\cdots+a_k$ be the characteristic polynomial of this recurrence relation. 
+
+Then, the generating function of $(h_i)_{i\ge0}$ is given by $g(x) = p(x)/q(x)$, where $q(x) = x^k r(1/x)$ and
+
+$$
+p(x) = h_0 + (h_1+a_1h_0)x+(h_2+a_1h_1+a_2h_0)x^2+\cdots+(h_{k-1}+a_1h_{k-2}+\cdots+a_{k-1}h_0)x^{k-1}
+$$
+
 $p(x)$ in another form:
+
 $$
 p(x) = \sum_{i = 0}^{k - 1}\left( \sum_{j = 0}^{i} a_jh_{i-j}\right)x^i
 $$
-where we define $a_0 = 1$.
 
+where we define $a_0 = 1$.
 
 
 > Note that this is slightly different from the previous definition, but this is still a homogeneous recurrence relations. 
