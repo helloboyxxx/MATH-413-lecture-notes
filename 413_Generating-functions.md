@@ -2,8 +2,6 @@
 
 Generating functions can be regarded as algebraic objects whose formal manipulation allows us to count the number of possibilities for a problem by means of algebra. 
 
-
-
 <span style="color:#28a745">Definition</span>
 
 Let $h_0, h_1, h_2, h_3, \ldots$ be an infinite sequence of numbers. Its generating function is defined to be the infinite series: 

@@ -19,18 +19,20 @@ $|A \cup B| = |A| + |B| - |A \cap B| = 300 + 200 - 100$
 Let $A_1,\ldots, A_n$ be a sequence of finite sets. Then,
 
 $$
-\left | \bigcup_{i=1}^n A_i\right | = \sum_{i \in [n]} |A_i|-\sum_{ij \in \binom{[n]}{2}}|A_i \cap A_j|+\ldots+(-1)^{n+1}\sum_{i \in \binom{[n]}{n}} |A_i|
+\begin{align*}
+\left| \bigcup_{i=1}^n A_i\right|
+&= \sum_{i \in [n]} |A_i|-\sum_{i,j \in \binom{[n]}{2}}|A_i \cap A_j|+\ldots\\
+&+(-1)^{n+1}\sum_{i \in \binom{[n]}{n}} |A_1 \cap A_2 \cap \cdots A_n|
+\end{align*}
 $$
 
 Where $[n]= \{1,\ldots,n\}$ and $\binom{[n]}{i}=\{A\subseteq [n]: |A|=i\}$. 
-
-
 
 It is important to see that the size of the set $\left|\binom{[n]}{i}\right| = \binom{n}{i}$.
 
 <span style="color:#eb861c">Proof</span>
 
-<span style="color:#28a745">Notation</span>
+<span style="color:#28a745">Notation</span> 
 $$
 1_{v\in S}
 \begin{cases}
@@ -55,20 +57,34 @@ $$
 - \sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j} + \ldots
 + \sum_{1, 2, 3\ldots n \in \binom{[n]}{n}} 1_{v \in A_1 \cap \cdots \cap A_n}
 $$
-Define $k = \# \{i : v \in A_i\} \geq 1$. Suppose $v \in A_1, \ldots, A_k$ and $v \not \in A_{k+1}, \ldots A_n$.
+Define $k = \# \{i : v \in A_i\} \geq 1$. WLOG, suppose $v \in A_1, \ldots, A_k$ and $v \not \in A_{k+1}, \ldots A_n$.
 
-Pick an example $\sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j}$, whenever $i > k$ or $j > k$, the indicator function $1_{v\in A_i \cap A_j}$ gives us 0. Then the number of 
+Pick an example $\sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j}$, whenever $i > k$ or $j > k$, the indicator function $1_{v\in A_i \cap A_j}$ gives us 0. Then the term: $\sum_{i,j \in \binom{[n]}{2}}1_{v \in A_i \cap A_j}$ counts the number of unordered pairs $(i, j)$ such that $i, j \leq k$, which is $\binom{k}{2}$. This works for other terms as well. Also notice that the left side of this equation must be 1.Now the equation becomes: 
+$$
+\begin{align*}
+1 &= \binom{k}{1} - \binom{k}{2} + \binom{k}{3} - \ldots + (-1)^{k+1}\binom{k}{k}\\
+\binom{k}{0} + \binom{k}{2} + \binom{k}{4} \ldots &= \binom{k}{1} + \binom{k}{3} + \binom{k}{5} + \ldots
+\end{align*}
+$$
+The second line must be true by a binomial identity we have seen before. This means that the inclusion-exclusion principle can be derived from this identity, thus the principle is true. $\blacksquare$
 
-
-
-
+> I am not 100% sure this proof is correct. Please read book / other prooves if possible.
 
 **There is another form:**
 
 Let $A_1, \ldots A_n$ be a sequence of finite subsets of a finite set then:
 $$
-|\bar A_1 \cap \bar A_2 \cap \cdots \cap \bar A_n| = |S| - |\bar A_1 \cup \bar A_2 \cup \cdots \cup \bar A_n|
+|\bar A_1 \cap \bar A_2 \cap \cdots \cap \bar A_n| = |S| - | A_1 \cup  A_2 \cup \cdots \cup A_n|
 $$
+
+Also:
+
+$$
+\left|\overline{A_1 \cup A_2 \cup \cdots \cup A_n}\right|=|S|-\left|A_1 \cup A_2 \cup \cdots \cup A_n\right|
+$$
+
+
+
 <span style="color:#eb861c">Proof</span>
 
 1. $\subseteq$
@@ -91,7 +107,7 @@ x \in |\bar A_1 \cup \bar A_2 \cup \cdots \cup \bar A_n|\\
 \end{align*}
 $$
 
-==??? correct?==
+Or by DeMorgan's rules.
 
 
 
@@ -160,8 +176,6 @@ Similarly, $|A_1 \cap A_2| = $ number of solutions of $x_1 + x_2 + x_3 = 10$ wit
 $|A_1 \cap A_2| = 3, |A_1 \cap A_3| = 1, |A_2 \cap A_3| = 0$. 
 
 The intersection of these three is $0$. Now, we can apply the inclusion-exclution principle.
-
-
 
 
 
