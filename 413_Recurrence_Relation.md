@@ -137,7 +137,7 @@ Let $(a_i)_{i=0}^{\infty}$ be a sequence given by $a_i = q^i$. Suppose that $(a_
 Answer: we should have 
 $$
 \begin{align*}
-q^n = q^{n-1} \cdot q^{n-2}\\
+q^n = q^{n-1} + q^{n-2}\\
 q^2 = q+1\\
 q^2 - q - 1 = 0\\
 q = \frac{1\pm \sqrt 5}{2}
@@ -157,7 +157,6 @@ a_n = a_{n-1} + a_{n-2}\\
 b_n = b_{n-1} + b_{n-2}
 \end{cases}
 $$
-
 
 <span style="color:#599eff">Lemma</span> Let $c_1, c_2 \in \mathbb{R}$. $(a_i)_i, (b_i)_i$ as before. 
 
@@ -184,7 +183,7 @@ d_1 = c_1 a_1 + c_2 b_1\\
 &\begin{cases}
 d_0 &= c_1 \cdot 1 + c_2 \cdot 1 = 0\\
 d_1 &= c_1 \cdot \left( \frac{1 + \sqrt 5}{2} \right)^1 
-+ c_2 \cdot \left( \frac{1 + \sqrt 5}{2} \right)^1 = 1
++ c_2 \cdot \left( \frac{1 - \sqrt 5}{2} \right)^1 = 1
 \end{cases}
 \end{align*}
 $$

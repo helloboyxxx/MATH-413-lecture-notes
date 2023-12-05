@@ -124,3 +124,11 @@ Q(x)=x^n-a_1 x^{n-1}-a_2 x^{n-2}-\cdots-a_k x^{n-k}
 $$
 ????? I need some help...
 
+
+
+
+
+
+
+
+

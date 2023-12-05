@@ -29,7 +29,7 @@ $$
 \lim_{n \to \infty}(1-x)(1 + x + x^2 + x^3 + \cdots + x^n)
 &= \lim_{n \to \infty}(1 - x^{n+1}) = 1\\
 \Rightarrow\\
-\sum_{j=0}^{\infty}x^j = \frac{1}{x-1}
+\sum_{j=0}^{\infty}x^j = \frac{1}{1-x}
 \end{align*}
 $$
 #### <span style="color:#04c2b2">Example 2</span>
@@ -199,7 +199,7 @@ So far, we defined the generating function for a sequence $\left(h_n\right)_{n \
 
 This is particularly suited to some sequences involving **combinations and binomial coefficients**.
 
-However, for sequences whose terms count permutations, it is more useful to consider a generating function with respect to the monomials
+However, for sequences whose terms count **permutations**, it is more useful to consider a generating function with respect to the monomials
 $$
 1, x, \frac{x^2}{2 !}, \frac{x^3}{3 !}, \ldots
 $$
@@ -283,7 +283,7 @@ $$
 g(x) = \left( \sum_{j_1 = 0}^{n_1} \frac{x^{j_1}}{j_1} \right) \cdots 
 \left( \sum_{j_k = 0}^{n_k} \frac{x^{j_k}}{j_k} \right)
 $$
-Goal: to show that the coef of $x_n$ in $g$ is equal to $P_n / n!$
+Goal: to show that the coef of $x^n$ in $g$ is equal to $P_n / n!$
 $$
 \begin{align*}
 g(x) &= \sum_{0\leq j_i \leq n_i}\frac{x^{j_1}}{j_1!} \cdots\frac{x^{j_k}}{j_k!}\\
@@ -304,7 +304,7 @@ $$
 \begin{align*}
 g^{(e)}(x) &= \left( 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \ldots \right) && \text{choice of num of 1's}\\
 &\cdot \left( \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \ldots \right) && \text{choice of num of 2's}\\
-&\cdot \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots \right)&& \text{choice of num of 3's}
+&\cdot \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} \right)&& \text{choice of num of 3's}
 \end{align*}
 $$
 The expansion becomes:
@@ -339,7 +339,7 @@ Determine the number of ways to color the squares of a 1-by-$n$ chessboard, usin
 
 **Solution**
 $$
-g^{(e)}(x) = e^x \cdot e^x \cdot \left( \frac{e^x + x^{-x}}{2} \right) = \frac{x^{3x}}{2}
+g^{(e)}(x) = e^x \cdot e^x \cdot \left( \frac{e^x + e^{-x}}{2} \right) = \frac{e^{3x} + e^x}{2}
 $$
 Using a same logic.
 
@@ -407,7 +407,7 @@ TBC
 
 Solve the recurrence relation: 
 $$
-h_n = 5h_{n-1} = 6h_{n-2} \quad (n \geq 2)
+h_n = 5h_{n-1} - 6h_{n-2} \quad (n \geq 2)
 $$
 with initial values $h_0 = 1, h_1 = -2$
 
