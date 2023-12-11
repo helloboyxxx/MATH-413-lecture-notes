@@ -155,3 +155,6 @@ These are the guess direction for possible **particular solutions** of $h_n$:
 
 (b) If $b_n$ is an **exponential**, then look for a particular solution that is also an exponential.
 
+
+
+There are some common terms that you can try to guess

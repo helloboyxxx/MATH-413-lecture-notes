@@ -2,7 +2,11 @@
 
 #### Question
 
-Can you find a closed formula for the sum of the $p$-th powers of the first $n$ positive integers?
+Can you find a closed formula for the sum of the $p$-th powers of the first $n$ positive integers? That is, we need a closed formulat for the sequence: 
+$$
+h_n=a_p n^p+a_{p-1} n^{p-1}+\cdots+a_1 n+a_0, \quad(n \geq 0)
+$$
+
 
 **Solution**
 
@@ -200,7 +204,62 @@ p
 $$
 
 
+Now, we can back to the initial question: can we find a closed formula for the sum of the $p$-th powers of the first $n$ positive integers? Now we have the tools. 
 
+We can first write out the difference table. Then, we look at the 0-diagonal, and we reconstruct the sequence, but in the form we see in Theorem 8.2.2. Here is an example: 
+
+<span style="color:#04c2b2">Exercise</span>
+
+Consider the sequence with general term
+$$
+h_n=n^3+3 n^2-2 n+1, \quad(n \geq 0)
+$$
+The 0-diagonal is $1,2,12,6,0,0, \ldots$. By using Theorem 8.2.2, we get: 
+$$
+h_n = \binom{n}{0} + 2\binom{n}{1} +12\binom{n}{2} + 6\binom{n}{3}
+$$
+Summing them up:
+$$
+\sum_{k=0}^{n} h_k = \sum_{k=0}^{n}\binom{k}{0} + 2\sum_{k=0}^{n}\binom{k}{1} +12\sum_{k=0}^{n}\binom{k}{2} + \sum_{k=0}^{n}6\binom{k}{3}
+$$
+By hokey-stick identity, this turns to: 
+$$
+\sum_{k=0}^{n} h_k = \binom{n+1}{1} + 2 \binom{n+1}{2} + 12 \binom{n+1}{3} + 6\binom{n+1}{4}
+$$
+
+
+> The general expression of what we have calculated.
+
+### <span style="color:#3c66b5">Theorem</span>
+
+Theorem 8.2.3 Assume that the sequence $h_0, h_1, h_2, \ldots, h_n, \ldots$ has a difference table whose 0 th diagonal equals
+$$
+c_0, c_1, c_2, \ldots, c_p, 0,0, \ldots
+$$
+
+Then
+$$
+\sum_{k=0}^n h_k=c_0\left(\begin{array}{c}
+n+1 \\
+1
+\end{array}\right)+c_1\left(\begin{array}{c}
+n+1 \\
+2
+\end{array}\right)+\cdots+c_p\left(\begin{array}{c}
+n+1 \\
+p+1
+\end{array}\right)
+$$
+
+> Proof is the same as our calculation above.
+
+---
+
+Next, we discuss the sequence
+$$
+h_n = n^p
+$$
+for some constant $p$.
 
 
 
