@@ -1,4 +1,4 @@
-# Difference Sequence
+# Difference Sequence and Stirling Numbers
 
 #### Question
 
@@ -27,7 +27,7 @@ $$
 $$
 Use Pascal's formula for the last two terms. Then expand them to verify that this equation is true.
 
-
+> Our goal of this section is to find a general formula for the sequence $h_n = n^p$.
 
 <span style="color:#28a745">Definition</span>
 
@@ -227,9 +227,9 @@ $$
 
 > The general expression of what we have calculated.
 
-### <span style="color:#3c66b5">Theorem</span>
+### <span style="color:#3c66b5">Theorem</span> 8.2.3
 
-Theorem 8.2.3 Assume that the sequence $h_0, h_1, h_2, \ldots, h_n, \ldots$ has a difference table whose 0 th diagonal equals
+Assume that the sequence $h_0, h_1, h_2, \ldots, h_n, \ldots$ has a difference table whose 0 th diagonal equals
 $$
 c_0, c_1, c_2, \ldots, c_p, 0,0, \ldots
 $$
@@ -252,26 +252,165 @@ $$
 
 ---
 
+### Stirling Numbers
+
 Next, we discuss the sequence
 $$
 h_n = n^p
 $$
 for some constant $p$.
 
+<span style="color:#04c2b2">Exercise</span> Find the sum of the fourth powers of the first $n$ positive integers. Let $h_n=n^4$. 
+
+Because $h_n$ is a polynomial of degree 4 , the 0th diagonal of the difference table equals
+$$
+0,1,14,36,24,0,0, \ldots
+$$
+Hence,
+
+$$
+\begin{aligned}
+1^4+2^4+\cdots+n^4= & \sum_{k=0}^n k^4 \\
+= & 0\left(\begin{array}{c}
+n+1 \\
+1
+\end{array}\right)+1\left(\begin{array}{c}
+n+1 \\
+2
+\end{array}\right)+14\left(\begin{array}{c}
+n+1 \\
+3
+\end{array}\right) \\
+& \quad+36\left(\begin{array}{c}
+n+1 \\
+4
+\end{array}\right)+24\left(\begin{array}{c}
+n+1 \\
+5
+\end{array}\right) .
+\end{aligned}
+$$
+
+More generally, we want to find the patterns of the 0-diagonal of $h_n = n^p$. It has the form: 
+$$
+c(p, 0), c(p, 1), c(p, 2), \ldots, c(p, p), 0,0, \ldots
+$$
+by Theorem 8.2.2, it follows that
+
+$$
+n^p = c(p,0)\binom{n}{0} + c(p,1)\binom{n}{1} + \cdots + c(p,p)\binom{n}{p}
+$$
+
+There is a special case: when $p = 0, n^p = n^0 = 1 \implies c(0,0)\binom{n}{0} = 1 \implies c(0,0) = 1$
+
+We rewrite this by introducing a new notation. Let
+$$
+[n]_k= \begin{cases}n(n-1) \cdots(n-k+1) & \text { if } k \geq 1 \\ 1 & \text { if } k=0\end{cases}
+$$
+
+Since
+$$
+\binom{n}{k}=\frac{n(n-1) \cdots(n-k+1)}{k !}=\frac{[n]_k}{k !}
+$$
+Rewrite: 
+$$
+\begin{align*}
+n^p &= c(p,0) \frac{[n]_0}{0!} + c(p,1) \frac{[n]_1}{1!} + \cdots + c(p,p) \frac{[n]_p}{p!} \\
+&= \sum_{k=0}^p \frac{c(p, k)}{k !}[n]_k
+\end{align*}
+$$
+Introducing the stirling numbers!
+
+### Stirling Numbers of the Second Kind
+
+<span style="color:#28a745">Definition</span>
+$$
+S(p, k)=\frac{c(p, k)}{k !}, \quad(0 \leq k \leq p)
+$$
+#### Special cases:
+
+$$
+S(p, 0)=\frac{c(p, 0)}{0 !}=c(p, 0)
+$$
+we have
+$$
+S(p, 0)= \begin{cases}1 & \text { if } p=0 \\ 0 & \text { if } p \geq 1\end{cases}
+$$
+
+We can also take a look at $S(p, p)$. In the formula
+$$
+n^p = \sum_{k=0}^p \frac{c(p, k)}{k!}[n]_k
+$$
+when $k = p$, the last term of the right side is $(c(p,p) / p!) \cdot [n]_p$. Notice that $n$ has degree $p$ in $[n]_p$, and this term is the only one that contributes to degree $p$ on the left side. The coefficient of $n^p$ is 1, which implies $S(p,p) = 1$.
+
+---
+
+Stirling numbers of the second kind satisfy a **Pascal-like** recurrence relation.
+
+### <span style="color:#3c66b5">Theorem</span>
+
+
+If $1 \le k \le p-1$, then
+
+$$
+S(p,k) = kS(p-1,k)+ S(p-1,k-1)
+$$
+
+<span style="color:#eb861c">Proof</span> by induction on $n$. 
+$$
+n^{p-1}\cdot n = \left( \sum_{k=0}^{p-1}S(p,k)[n]_k \right) \cdot n
+$$
+Then just calculation. Focus on the coefficient of $[n]_k$.
 
 
 
+### Meaning of Stirling number of the Second Kind
 
+The Stirling number of the second kind $S(p, k)$ counts the number of partitions of a set of $p$ elements into $k$ indistinguishable boxes in which no box is empty.
 
+<img src="https://raw.githubusercontent.com/helloboyxxx/images-for-notes/master/uPic/image-20231212140803392.png" alt="image-20231212140803392" style="zoom:50%;" />
 
+### A formula for Stirling numbers of second kind
 
+Let $S^{\#}(p,k)$ be the number of partitions of $\{1,\ldots,p\}$ into $k$ non-empty **distinguishable** boxes.
+For each integer $k$ with $0 \le k \le p$, we have
 
+$$
+S^{\#}(p,k) = \sum \limits_{t=0}^{k} (-1)^{t}\binom{k}{t}(k-t)^p;
+$$
 
+hence,
+
+$$
+S(p,k) = \dfrac{1}{k!}\sum \limits_{t=0}^{k} (-1)^{t}\binom{k}{t}(k-t)^p.
+$$
+
+<span style="color:#eb861c">Proof</span> by inclusion-exclusion
+
+> I couldn't give a complete proof. But here is a sketch:
+
+Let $\mathcal{U}$ be a collection of $k$-partitions of $\set{1, \ldots, p}$. (Can have empty boxes.)
+
+Let $A_i$ be the number of collections of $k$-partition in $\mathcal{U}$ such that box $i$  is empty.
+
+Goal: 
+$$
+\left|\mathcal{U}\right| - \left|\bigcup_{i=1}^{k} A_i\right|
+$$
 
 
 ---
 
-Bell numbers
+### Bell Numbers
+
+The Bell number $B_p$ is the number of partitions of a set of $p$ elements into **nonempty, indistinguishable boxes**. Now we **do not specify the number of boxes**. 
+But since no box is to be empty, the number of boxes cannot exceed $p$.
+
+We have
+
+$$
+B_p = S(p,0)+S(p,1)+\cdots+S(p,p).
+$$
 
 ### <span style="color:#3c66b5">Theorem</span> 
 
@@ -292,15 +431,26 @@ Let $a_t = $ number of the choices of elements which are in the box with $p$, wh
 
 It remains to partition $p-(t-1)$ elements into indistinguishable non-empty boxes $B_{p-t-1}$ ways. Writing out the relation we get: 
 
-
+==...==
 
 ---
 
 ### Stirling number of the first kind
 
-==...==
+The Stirling numbers of the second kind show us how to write $n^p$ in terms of $[n]_0, [n]_1, \ldots,[n]_p$. 
+
+The Stirling numbers of the first kind play the inverse role.  They show us how to write $[n]_p$ in terms of $n^0,n^1,\ldots,n^p$.
+
+There exist coefficients $s(p,0), s(p,1), \ldots, s(p,p)$ such that 
+$$
+n^p = \sum \limits_{k=0}^p (-1)^{p-k}s(p,k) n^k.
+$$
+
+The Stirling numbers of the first kind are the coefficients $s(p,k)$, with $0 \le k \le p$.
 
 
+
+Stirling numbers of the first kind is also Pascal like. But I won't show it here.
 
 
 
