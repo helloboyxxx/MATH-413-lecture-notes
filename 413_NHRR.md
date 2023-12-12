@@ -157,4 +157,17 @@ These are the guess direction for possible **particular solutions** of $h_n$:
 
 
 
-There are some common terms that you can try to guess
+There are some common forms that you can try to guess:
+
+| $f(n)$ | $a_n$                 |
+| ------ | --------------------- |
+| $c$    | $A$                   |
+| $n$    | $A_1n + A_0$          |
+| $n^2$  | $A_2n^2 + A_1n + A_0$ |
+| $r^n$  | $Ar^n$                |
+
+where $c, A, r$ are constants.
+
+---
+
+Let me put more examples here.

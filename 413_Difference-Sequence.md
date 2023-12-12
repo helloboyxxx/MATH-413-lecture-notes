@@ -155,10 +155,7 @@ $$
 $$
 equals to
 $$
-h_n=\left(\begin{array}{l}
-n \\
-p
-\end{array}\right) .
+h_n = \binom{n}{p}
 $$
 <span style="color:#eb861c">Proof</span>
 
