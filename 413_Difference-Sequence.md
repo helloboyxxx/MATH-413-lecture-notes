@@ -16,7 +16,7 @@ $$
 $$
 Now we want a new method. First, construct a difference table for $n^3$.
 
-<img src="https://raw.githubusercontent.com/helloboyxxx/images-for-notes/master/uPic/image-20231127121019537.png" alt="image-20231127121019537" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/helloboyxxx/images-for-notes/master/uPic/image-20231127121019537.png" alt="image-20231127121019537" style="zoom: 33%;" />
 
 Let's verify the following equation:
 

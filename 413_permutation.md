@@ -81,3 +81,5 @@ Similar to the line permutation. We divide the number by $r$ because the same ci
 
 
 # IF YOU KNOW LESS FORMULAS, YOU WOULD HAVE MORE SPACES IN YOUR BRAIN. 😝
+
+> This is actually very important! Don't trust your memory during an exam.🥲 Prove everything you write.

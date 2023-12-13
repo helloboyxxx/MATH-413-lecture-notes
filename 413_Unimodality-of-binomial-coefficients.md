@@ -40,11 +40,13 @@ Note that: ${{n} \choose {k}} = {{} \choose {}}$
 
 We want to use this theorem to prove Sperner's theorem. But we need some definition first.
 
+<span style="color:#28a745">Definition</span> Partial order and Strict partial order
 
+A ***partial order*** on a set $X$ is a reflexive, antisymmetric, and transitive relation $R$. A ***strict partial order*** on a set $X$ is an irreflexive, antisymmetric, and transitive relation. Thus, $\subseteq, \leq$, and $\mid$ are partial orders, while $\subset$ and $<$ are strict partial orders.
 
 <span style="color:#28a745">Definition</span> (Chain)
 
-We say that a collection $\mathcal{C}$ of subsets of $S$ is a chain provided that for that each pair of subsets in $C$, one is contained in the other:
+We say that a collection $\mathcal{C}$ of subsets of $S$ is a chain provided that for that each pair of subsets in $\mathcal{C}$, one is contained in the other:
 
 $$
 A_1, A_2 \in \mathcal{C}, A_1 \neq A_2, \text{ implies that } A_1 \subset A_2 \text{ or } A_2 \subset A_1.
@@ -68,21 +70,21 @@ Example: $\{\{1,2\}, \{2,3\}, \{3,4\}\}$
 
 ### <span style="color:#3c66b5">Sperner's theorem</span>
 
-Let $S$ be a set of $n$ elements. The maximum size of an antichain on $S$ is $\binom{n}{\lfloor n/2\rfloor}$
-
-
-
+Let $S$ be a set of $n$ elements. The maximum size of an antichain on $S$ is 
+$$
+\binom{n}{\lfloor n/2\rfloor}
+$$
 <span style="color:#eb861c">Proof</span>
 
-$[n] = \{1, 2, \ldots, n\}$
+$[n] = \set{1, 2, \ldots, n}$
 
 Fix $\mathcal{F}$ antichain in $[n]$
 
-$\mathcal{C} = \{A \subset S : |A| = {\lfloor n/2\rfloor}\}$
+$\mathcal{C} = \set{A \subset S : |A| = {\lfloor n/2\rfloor}}$
 
-$\mathcal{P} = \{(\mathcal{C}, A): A \in \mathcal{F} \cap \mathcal{C} \text{ and  } \mathcal{C} \text{ is the maximal chain in }S\}$. 🧐 This is CRITICAL
+$\mathcal{P} = \set{(\mathcal{C}, A): A \in \mathcal{F} \cap \mathcal{C} \text{ and  } \mathcal{C} \text{ is the maximal chain in }S}$. 🧐 This is CRITICAL
 
-We want to proof this theorem by double conting this $\mathcal{P}$.  Our goal is to bound $|\mathcal{F}|$ using $\mathcal{P}$. 
+We want to proof this theorem by double counting this $\mathcal{P}$.  Our goal is to bound $|\mathcal{F}|$ using $\mathcal{P}$. 
 
 
 

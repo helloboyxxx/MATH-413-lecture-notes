@@ -233,8 +233,6 @@ $$
 
 
 
-
-
 ---
 
 <span style="color:#04c2b2">Another forbidden position problem</span>
